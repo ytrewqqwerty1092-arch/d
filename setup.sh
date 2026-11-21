@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -p /home/custompkgs
 sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf 2>/dev/null || true
-pacman -Sy --noconfirm git base-devel wget unzip
+pacman -Sy --noconfirm git base-devel wget unzip fuse2 fuse3
 cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd ~ && rm -rf /tmp/yay
 pacman -Syu --noconfirm
 pacman -S --noconfirm kitty steam firefox librewolf flatpak
