@@ -4,9 +4,9 @@ sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf 2>/dev/null || true
 pacman -Sy --noconfirm git base-devel wget unzip
 cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd ~ && rm -rf /tmp/yay
 pacman -Syu --noconfirm
-pacman -S --noconfirm steam firefox librewolf flatpak
+pacman -S --noconfirm kitty steam firefox librewolf flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 2>/dev/null || true
-flatpak install -y flathub dev.zeapedesktop.Vesktop 2>/dev/null || flatpak install -y flathub io.gitlab.retrox.vesktop
+flatpak install -y flathub dev.vencord.Vesktop
 mkdir -p /home/me/.local/share/ACCELA /home/me/Desktop
 curl -L https://github.com/swwayps/ACCELA/releases/latest/download/ACCELA.AppImage -o /home/me/.local/share/ACCELA/ACCELA.AppImage && chmod +x /home/me/.local/share/ACCELA/ACCELA.AppImage
 mkdir -p /home/me/.local/share/applications
